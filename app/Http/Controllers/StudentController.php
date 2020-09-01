@@ -8,23 +8,6 @@ use App\Student;
 class StudentController extends Controller
 {
   public function index(){
-    // $students = [
-    //   [
-    //     'nome' => 'Daniele',
-    //     'cognome' => 'Detommaso',
-    //     'voto' => 10,
-    //   ],
-    //   [
-    //     'nome' => 'Miriam',
-    //     'cognome' => 'Agatiello',
-    //     'voto' => 9,
-    //   ],
-    //   [
-    //     'nome' => 'Gigi',
-    //     'cognome' => 'Vitucci',
-    //     'voto' => 3,
-    //   ]
-    // ];
 
     $students = Student::all();
 
@@ -33,4 +16,9 @@ class StudentController extends Controller
       'students' => $students,
     ]);
   }
+
+  public function handlebars(){
+    return view('students_handlebars', []);
+  }
+
 }

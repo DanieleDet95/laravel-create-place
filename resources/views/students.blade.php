@@ -5,12 +5,10 @@
 @section('main')
 
   <h1>Teacher: {{ $teacher }}</h1>
-  <h1>Studenti</h1>
-  <ul>
-    @foreach ($students as $student)
-      <li>Nome: {{ $student['nome'] }}</li>
-      <li>Cognome: {{ $student['cognome'] }}</li>
-      <li>Voto: {{ $student['voto'] }}</li>
-    @endforeach
-  </ul>
+  @foreach ($students as $student)
+    <h2>Studente: {{ $student->nome }} {{ $student->cognome }}</h2>
+    <ul>
+      <li>Voto: {{ $student->voto }}</li>
+    </ul>
+  @endforeach
 @endsection
